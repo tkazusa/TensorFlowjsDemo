@@ -43,7 +43,7 @@ if __name__ == "__main__":
     model = build_finetuning_model(vgg16)
     model.compile(
         loss='binart_crossentropy',
-        optimizer=SGD(lr=1e-4, momentmu=0.9),
+        optimizer=SGD(lr=1e-4, momentum=0.9),
         metrics=['accuracy']
     )
 
@@ -110,7 +110,7 @@ if __name__ == "__main__":
     csv_filepath = os.path.join(MODEL_DIR, 'loss.csv')
     csv = CSVLogger(csv_filepath, append=True)
 
-    n_epoch = 30
+    n_epoch = 1
 
     history = model.fit_generator(
         train_itr,
