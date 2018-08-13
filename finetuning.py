@@ -74,9 +74,9 @@ if __name__ == "__main__":
     )
 
     MODEL_DIR = os.path.join('model', datetime.now().strftime('%y%m%d_%H%M'))
-    os.mkdir(MODEL_DIR, exist_ok=True)
+    os.mkdirs(MODEL_DIR, exist_ok=True)
     WEIGHTS_DIR = os.path.join(MODEL_DIR, 'weights')
-    os.mkdir(WEIGHTS_DIR, exist_ok=True)
+    os.mkdirs(WEIGHTS_DIR, exist_ok=True)
 
     model_json = os.path.join(MODEL_DIR, 'model.json')
     with open(model_json, 'w') as f:
