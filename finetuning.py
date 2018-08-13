@@ -42,7 +42,7 @@ if __name__ == "__main__":
                   input_shape=(224, 224, 3))
     model = build_finetuning_model(vgg16)
     model.compile(
-        loss='binart_crossentropy',
+        loss='binary_crossentropy',
         optimizer=SGD(lr=1e-4, momentum=0.9),
         metrics=['accuracy']
     )
