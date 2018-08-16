@@ -42,8 +42,8 @@ if __name__ == "__main__":
                   input_shape=(224, 224, 3))
     model = build_finetuning_model(vgg16)
     model.compile(
-        loss='binart_crossentropy',
-        optimizer=SGD(lr=1e-4, momentmu=0.9),
+        loss='binary_crossentropy',
+        optimizer=SGD(lr=1e-4, momentum=0.9),
         metrics=['accuracy']
     )
 
@@ -74,9 +74,9 @@ if __name__ == "__main__":
     )
 
     MODEL_DIR = os.path.join('model', datetime.now().strftime('%y%m%d_%H%M'))
-    os.mkdir(MODEL_DIR, exist_ok=True)
+    os.mkdirs(MODEL_DIR, exist_ok=True)
     WEIGHTS_DIR = os.path.join(MODEL_DIR, 'weights')
-    os.mkdir(WEIGHTS_DIR, exist_ok=True)
+    os.mkdirs(WEIGHTS_DIR, exist_ok=True)
 
     model_json = os.path.join(MODEL_DIR, 'model.json')
     with open(model_json, 'w') as f:
@@ -110,7 +110,7 @@ if __name__ == "__main__":
     csv_filepath = os.path.join(MODEL_DIR, 'loss.csv')
     csv = CSVLogger(csv_filepath, append=True)
 
-    n_epoch = 30
+    n_epoch = 1
 
     history = model.fit_generator(
         train_itr,
