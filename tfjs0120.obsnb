@@ -1,0 +1,37 @@
+// URL: https://beta.observablehq.com/d/d8aeaa1f05564800
+// Title: tfjs 0.12.0
+// Author: Kazusa (@tkazusa)
+// Version: 49
+// Runtime version: 1
+
+const m0 = {
+  id: "d8aeaa1f05564800@49",
+  variables: [
+    {
+      inputs: ["md"],
+      value: (function(md){return(
+md`# tfjs 0.12.0`
+)})
+    },
+    {
+      inputs: ["md"],
+      value: (function(md){return(
+md`# require`
+)})
+    },
+    {
+      name: "tf",
+      inputs: ["require"],
+      value: (function(require){return(
+require('@tensorflow/tfjs@0.12.0')
+)})
+    }
+  ]
+};
+
+const notebook = {
+  id: "d8aeaa1f05564800@49",
+  modules: [m0]
+};
+
+export default notebook;
